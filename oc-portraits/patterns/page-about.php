@@ -29,7 +29,7 @@ echo ocp_image_text(
 	true
 );
 
-// Other work. The anchor is used by the footer "Corporate Photography" link until the 824 Brand Productions URL is confirmed.
+// Other work.
 echo ocp_section_open( 'pale-sage', '', '60' );
 echo str_replace(
 	array( '<!-- wp:paragraph {"align":"center","className":"ocp-eyebrow"} -->' . "\n" . '<p class="has-text-align-center ocp-eyebrow">' ),
@@ -41,7 +41,7 @@ echo ocp_p( 'Family portraiture is the focus here. Alongside it, I photograph bu
 echo ocp_columns_open( '', '', '30' );
 foreach (
 	array(
-		array( '824 Brand Productions', 'Corporate portraits, branding and events', 'Professional photography for businesses, teams and events.', '[Add the 824 Brand Productions website link]' ),
+		array( '824 Brand Productions', 'Corporate portraits, branding and events', 'Professional photography for businesses, teams and events.', '<a href="https://824brandproductions.com/">Visit 824 Brand Productions</a>' ),
 		array( 'The 824 Journal', 'Live music &amp; culture', 'Live music and culture coverage from Southern California.', '<a href="https://the824journal.press/">Visit The 824 Journal</a>' ),
 		array( 'Zharmaine.com', 'Photography portfolio', 'A broader look at my photography across subjects.', '<a href="https://zharmaine.com/">Visit Zharmaine.com</a>' ),
 	) as $ocp_item

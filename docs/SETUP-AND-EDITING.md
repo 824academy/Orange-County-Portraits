@@ -6,7 +6,7 @@ Orange County Portraits runs on one small custom block theme (`oc-portraits`) pl
 
 ## 1. Install (about 15 minutes)
 
-**Where:** the theme needs a WordPress site that allows theme and plugin uploads. That means either self-hosted WordPress, or WordPress.com on a plan that allows uploading themes and plugins. None of your current WordPress.com sites has been used, and none was changed.
+**Where:** a new WordPress site. On **WordPress.com**, the **Personal plan ($48/year, as listed October 2026) or higher** allows uploading themes and plugins, which is all this site needs. Business adds staging sites, SFTP and Akismet spam protection, but none of those are required. Self-hosted WordPress also works. None of your existing WordPress.com sites has been used or changed.
 
 **Keep an existing site safe:** if this goes onto a site that's already live, install it on a staging copy first. You can also use **Appearance → Themes → Live Preview**, which shows the theme without activating it.
 
@@ -24,8 +24,8 @@ Orange County Portraits runs on one small custom block theme (`oc-portraits`) pl
 5. **Name the author.** Go to **Users → Profile → Display name publicly as** and choose **Zharmaine Boatman**. Blog posts show this name.
 6. **Check where inquiries go.** The form sends to **zharmaine@824brandproductions.com**. To change it later, go to **Contact → Session inquiry → Mail tab → To**, then **Save**. Replies go straight to the visitor (Reply-To is set).
 7. **Turn on spam protection** (pick one):
-   - **Akismet:** install and activate it, then add an API key. The form already sends name and email to Akismet.
-   - **Cloudflare Turnstile:** go to **Contact → Integration → Cloudflare Turnstile** and add your site key and secret. The check appears on the form automatically.
+   - **Cloudflare Turnstile** (free; recommended on the WordPress.com Personal plan): create a free Cloudflare account, add a Turnstile widget for your domain, then paste the site key and secret into **Contact → Integration → Cloudflare Turnstile**. The check appears on the form automatically.
+   - **Akismet:** included on WordPress.com Business, or available with an API key on self-hosted sites. The form already sends name and email to Akismet.
 8. **Test the form.** Send one test inquiry for each inquiry type, from a phone and from a computer, and confirm each one arrives (see the launch checklist). If messages land in spam or never arrive, install **WP Mail SMTP** and send through your email provider.
 
 ### Page addresses created
@@ -79,7 +79,7 @@ Pricing lives in one place, on **Experience & Pricing**. The other service pages
 Go to **Appearance → Editor → Patterns → Template parts**, then choose **Header** or **Footer**.
 
 - **Menu links:** click the navigation, then click a link to change its label or address. Use **+** to add a link.
-- **Footer "Corporate Photography":** it currently points to the "My other work" section on About. Change it to the 824 Brand Productions website once you've confirmed the address.
+- **Footer "Corporate Photography":** links to https://824brandproductions.com/.
 - **Wordmark:** the site title (**Settings → General → Site Title**) is shown as ORANGE COUNTY / PORTRAITS. The theme automatically sets the last word as the small second line.
 - **Closing inquiry band** on the blog and articles: **Template parts → Inquiry band**.
 

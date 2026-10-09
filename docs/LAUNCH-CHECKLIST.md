@@ -4,22 +4,21 @@
 
 | # | Input | Blocks | Where it goes |
 |---|---|---|---|
-| 1 | **824 Brand Productions website URL** | Footer "Corporate Photography" link, About card | Footer template part; About → "My other work" card (currently shows "[Add the 824 Brand Productions website link]") |
-| 2 | **Hosting / which WordPress site** this goes on, with admin access | Installing the theme | See SETUP-AND-EDITING.md §1 |
-| 3 | **Photographs** for the placements in IMAGE-CHECKLIST.md, including a real photo of you (H7/A1) | Launch visuals | Replace placeholders |
-| 4 | **Final pricing approval**, and the **Complete Family image-count policy** | Removing "Provisional" labels | Experience & Pricing |
-| 5 | **Two or three sentences about you** in your own words | About page | About → paragraph in [brackets] |
-| 6 | **Privacy details:** gallery service name, analytics/cookies, how client images are handled | Privacy page | Privacy Policy (bracketed items) |
-| 7 | **Spam-protection choice:** Akismet key or Cloudflare Turnstile keys | Form spam protection | Contact → Integration |
-| 8 | **Domain** the site will use | Sitemap / Search Console | Settings → General |
+| 1 | **Hosting / which WordPress site** this goes on, with admin access | Installing the theme | See SETUP-AND-EDITING.md §1 |
+| 2 | **Photographs** for the placements in IMAGE-CHECKLIST.md, including a real photo of you (H7/A1) | Launch visuals | Replace placeholders |
+| 3 | **Final pricing approval**, and the **Complete Family image-count policy** | Removing "Provisional" labels | Experience & Pricing |
+| 4 | **Two or three sentences about you** in your own words | About page | About → paragraph in [brackets] |
+| 5 | **Privacy details:** gallery service name, analytics/cookies, how client images are handled | Privacy page | Privacy Policy (bracketed items) |
+| 6 | **Spam-protection choice:** Akismet key or Cloudflare Turnstile keys | Form spam protection | Contact → Integration |
+| 7 | **Domain** the site will use | Sitemap / Search Console | Settings → General |
 
 ## B. Before launch
 
 - [ ] All placeholders replaced, or the block deleted. Search each page for "Photo placeholder".
 - [ ] Alt text written for every photograph, describing the real image.
-- [ ] No `[bracketed]` notes left on any page. Check About, Privacy, Experience & Pricing, and the About card for 824 Brand Productions.
+- [ ] No `[bracketed]` notes left on any page. Check About, Privacy, and Experience & Pricing.
 - [ ] Provisional pricing label removed once pricing is approved, or kept on purpose.
-- [ ] Footer "Corporate Photography" link points to the 824 Brand Productions site.
+- [ ] 824brandproductions.com is live (the footer "Corporate Photography" link and the About card point to it).
 - [ ] Draft blog outlines are either written and published, or left as drafts. The homepage hides the blog section until a post is published.
 - [ ] **Settings → Reading:** homepage = Home, posts page = The Portrait Journal.
 - [ ] **Settings → Reading → Search engine visibility** is *unchecked* for the live site. Keep it checked on any staging copy.
