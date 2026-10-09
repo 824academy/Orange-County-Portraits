@@ -45,7 +45,7 @@ Screenshots of every page at both widths are in `docs/screenshots/`. The blog sc
 
 ## Needs checking on the real site
 
-1. **Inquiry delivery to the real inbox.** Locally, mail was captured rather than sent. The recipient address still has to be set, and delivery confirmed (see LAUNCH-CHECKLIST.md §C).
+1. **Inquiry delivery to the real inbox.** Locally, mail was captured rather than sent. The recipient is now set to zharmaine@824brandproductions.com; delivery still needs confirming (see LAUNCH-CHECKLIST.md §C).
 2. **Resubmitting after a validation error.** With the 6.2-rc build, a second Send clicked immediately after typing in the last field was ignored until that field lost focus (the second click then worked). Retest with the stable plugin.
 3. **Spam protection** (Akismet or Turnstile) needs keys, so it couldn't be exercised locally.
 4. **Real photographs:** mobile crops, alt text, and file sizes.

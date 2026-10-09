@@ -14,6 +14,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
+// Where new inquiry forms send messages. After setup, change it under Contact → Session inquiry → Mail.
+define( 'OCP_INQUIRY_EMAIL', 'zharmaine@824brandproductions.com' );
+
 /**
  * Starter pages: slug => settings.
  *
@@ -201,7 +204,7 @@ function ocp_setup_cf7() {
 		$mail['subject']            = '[_site_title] inquiry: [inquiry-type] from [your-name]';
 		$mail['body']               = "Name: [your-name]\nEmail: [your-email]\nInquiry type: [inquiry-type]\nPreferred dates: [preferred-dates]\nLocation or setting: [location]\n\nMessage:\n[your-message]\n\n--\nSent from the inquiry form at [_site_url]";
 		$mail['additional_headers'] = 'Reply-To: [your-email]';
-		$mail['recipient']          = '[_site_admin_email]';
+		$mail['recipient']          = OCP_INQUIRY_EMAIL;
 
 		$messages                     = $form->prop( 'messages' );
 		$messages['mail_sent_ok']     = 'Thank you — your inquiry has been sent. I’ll reply by email.';
@@ -235,7 +238,7 @@ function ocp_setup_cf7() {
 		);
 		$note = ' and placed on the Contact page';
 	}
-	return ( $created ? 'Inquiry form created' : 'Inquiry form already exists' ) . $note . '. Set the recipient address under Contact → Session inquiry → Mail.';
+	return ( $created ? 'Inquiry form created' : 'Inquiry form already exists' ) . $note . '. Inquiries are sent to ' . $form->prop( 'mail' )['recipient'] . ' (change under Contact → Session inquiry → Mail).';
 }
 
 /**

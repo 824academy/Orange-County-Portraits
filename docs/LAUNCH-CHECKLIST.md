@@ -4,15 +4,14 @@
 
 | # | Input | Blocks | Where it goes |
 |---|---|---|---|
-| 1 | **Email address that should receive inquiries** | Inquiry delivery | Contact → Session inquiry → Mail → To; Privacy page |
-| 2 | **824 Brand Productions website URL** | Footer "Corporate Photography" link, About card | Footer template part; About → "My other work" card (currently shows "[Add the 824 Brand Productions website link]") |
-| 3 | **Hosting / which WordPress site** this goes on, with admin access | Installing the theme | See SETUP-AND-EDITING.md §1 |
-| 4 | **Photographs** for the placements in IMAGE-CHECKLIST.md, including a real photo of you (H7/A1) | Launch visuals | Replace placeholders |
-| 5 | **Final pricing approval**, and the **Complete Family image-count policy** | Removing "Provisional" labels | Experience & Pricing |
-| 6 | **Two or three sentences about you** in your own words | About page | About → paragraph in [brackets] |
-| 7 | **Privacy details:** gallery service name, analytics/cookies, how client images are handled | Privacy page | Privacy Policy (bracketed items) |
-| 8 | **Spam-protection choice:** Akismet key or Cloudflare Turnstile keys | Form spam protection | Contact → Integration |
-| 9 | **Domain** the site will use | Sitemap / Search Console | Settings → General |
+| 1 | **824 Brand Productions website URL** | Footer "Corporate Photography" link, About card | Footer template part; About → "My other work" card (currently shows "[Add the 824 Brand Productions website link]") |
+| 2 | **Hosting / which WordPress site** this goes on, with admin access | Installing the theme | See SETUP-AND-EDITING.md §1 |
+| 3 | **Photographs** for the placements in IMAGE-CHECKLIST.md, including a real photo of you (H7/A1) | Launch visuals | Replace placeholders |
+| 4 | **Final pricing approval**, and the **Complete Family image-count policy** | Removing "Provisional" labels | Experience & Pricing |
+| 5 | **Two or three sentences about you** in your own words | About page | About → paragraph in [brackets] |
+| 6 | **Privacy details:** gallery service name, analytics/cookies, how client images are handled | Privacy page | Privacy Policy (bracketed items) |
+| 7 | **Spam-protection choice:** Akismet key or Cloudflare Turnstile keys | Form spam protection | Contact → Integration |
+| 8 | **Domain** the site will use | Sitemap / Search Console | Settings → General |
 
 ## B. Before launch
 
@@ -32,7 +31,7 @@
 
 ## C. Inquiry delivery test (on the live site)
 
-Do this after setting the recipient email and spam protection.
+Inquiries go to zharmaine@824brandproductions.com. Do this after turning on spam protection.
 
 - [ ] Open `/contact/` on a phone and send a **Family Session** inquiry, using a different email address from the recipient.
 - [ ] Confirm the email arrives (check the spam folder), with:

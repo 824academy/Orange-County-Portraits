@@ -55,7 +55,7 @@ The site is a small custom **block theme** (`oc-portraits/`) built only from nat
 
 **Blocked on inputs** (details in the launch checklist):
 - The hosting/site to install on.
-- The inquiry email address and a real delivery test.
+- A real delivery test to zharmaine@824brandproductions.com.
 - The 824 Brand Productions URL.
 - Your photographs.
 - Final pricing and the Complete Family image count.

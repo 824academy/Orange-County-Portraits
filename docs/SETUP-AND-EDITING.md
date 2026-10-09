@@ -22,7 +22,7 @@ Orange County Portraits runs on one small custom block theme (`oc-portraits`) pl
    - Switches links to post-name permalinks.
    - Registers the Privacy page.
 5. **Name the author.** Go to **Users → Profile → Display name publicly as** and choose **Zharmaine Boatman**. Blog posts show this name.
-6. **Set where inquiries go.** Go to **Contact → Session inquiry → Mail tab → To**. Replace `[_site_admin_email]` with the address that should receive inquiries, then **Save**.
+6. **Check where inquiries go.** The form sends to **zharmaine@824brandproductions.com**. To change it later, go to **Contact → Session inquiry → Mail tab → To**, then **Save**. Replies go straight to the visitor (Reply-To is set).
 7. **Turn on spam protection** (pick one):
    - **Akismet:** install and activate it, then add an API key. The form already sends name and email to Akismet.
    - **Cloudflare Turnstile:** go to **Contact → Integration → Cloudflare Turnstile** and add your site key and secret. The check appears on the form automatically.
