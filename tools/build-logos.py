@@ -140,6 +140,114 @@ def editorial(ink=FOREST, accent=ROSE, bg=None):
     return svg(W, H, f'<path d="{d1}" fill="{ink}"/><path d="{d2}" fill="{ink}"/>' + rule + tag, bg)
 
 
+# ---------------------------------------------------------------- concept 4
+def inverted(ink=FOREST, accent=ROSE, bg=None):
+    """Small tracked sans 'ORANGE COUNTY' above a large italic serif 'Portraits'."""
+    W, H = 900, 300
+    cx = W / 2
+    top, _ = centered(SANS, "ORANGE COUNTY", 20, 0.6, cx + 0.3 * 20, 112, ink)
+    rule = f'<rect x="{cx - 20}" y="132" width="40" height="1.2" fill="{accent}"/>'
+    word, _ = centered(SERIF_ITALIC, "Portraits", 118, -0.01, cx, 236, ink)
+    return svg(W, H, top + rule + word, bg)
+
+
+# ---------------------------------------------------------------- concept 5
+def framed(ink=FOREST, accent=ROSE, bg=None):
+    """Stationery label: thin double frame around the stacked name and city."""
+    W, H = 760, 420
+    cx = W / 2
+    sw = 1.2
+    frame = (f'<rect x="40" y="40" width="{W-80}" height="{H-80}" fill="none" stroke="{ink}" stroke-width="{sw}"/>'
+             f'<rect x="52" y="52" width="{W-104}" height="{H-104}" fill="none" stroke="{ink}" stroke-width="{sw*0.6}"/>')
+    name, _ = centered(SERIF, "ORANGE COUNTY", 48, 0.2, cx, 186, ink)
+    rule = f'<rect x="{cx - 24}" y="216" width="48" height="1.2" fill="{accent}"/>'
+    sub, _ = centered(SANS, "PORTRAITS", 18, 0.62, cx + 0.31 * 18, 256, ink)
+    city, _ = centered(SANS, "CYPRESS · CALIFORNIA", 12, 0.4, cx + 0.2 * 12, 322, ink)
+    return svg(W, H, frame + name + rule + sub + city, bg)
+
+
+# ---------------------------------------------------------------- concept 6
+def ocp_paths(ink, cx, cy, size):
+    """'OCP' set in Newsreader Light with the letters gently interlocked."""
+    o_w = width_of(SERIF, "O", size)
+    c_w = width_of(SERIF, "C", size)
+    p_w = width_of(SERIF, "P", size)
+    ov = size * 0.14
+    total = o_w + c_w + p_w - 2 * ov
+    x0 = cx - total / 2
+    base = cy + size * 0.34
+    o, _ = text_path(SERIF, "O", size, 0, x0, base)
+    c, _ = text_path(SERIF, "C", size, 0, x0 + o_w - ov, base)
+    pp, _ = text_path(SERIF, "P", size, 0, x0 + o_w + c_w - 2 * ov, base)
+    return f'<path d="{o} {c} {pp}" fill="{ink}"/>'
+
+
+def ocp_monogram(ink=FOREST, accent=ROSE, bg=None):
+    W, H = 700, 420
+    cx = W / 2
+    body = ocp_paths(ink, cx, 160, 170)
+    body += f'<rect x="{cx - 24}" y="268" width="48" height="1.2" fill="{accent}"/>'
+    name, _ = centered(SERIF, "ORANGE COUNTY", 34, 0.22, cx, 318, ink)
+    sub, _ = centered(SANS, "PORTRAITS", 13, 0.62, cx + 0.31 * 13, 352, ink)
+    return svg(W, H, body + name + sub, bg)
+
+
+# ---------------------------------------------------------------- concept 7
+def single_line(ink=FOREST, accent=ROSE, bg=None):
+    """One line, widely tracked, with rose dots between the words."""
+    W, H = 1300, 200
+    size, tr = 58, 0.26
+    words = ["ORANGE", "COUNTY", "PORTRAITS"]
+    gap = 54
+    widths = [width_of(SERIF, w, size, tr) for w in words]
+    total = sum(widths) + gap * 2
+    x = (W - total) / 2
+    body = ""
+    for i, w in enumerate(words):
+        d, adv = text_path(SERIF, w, size, tr, x, 122)
+        body += f'<path d="{d}" fill="{ink}"/>'
+        x += adv
+        if i < 2:
+            body += f'<circle cx="{x + gap/2 + size*tr/2:.1f}" cy="101" r="3" fill="{accent}"/>'
+            x += gap
+    return svg(W, H, body, bg)
+
+
+# ---------------------------------------------------------------- concept 8
+def lens(ink=FOREST, accent=ROSE, bg=None):
+    """Sentence-case serif where the O of 'Orange' is a drawn lens ring."""
+    W, H = 1150, 240
+    size = 92
+    rest = "range County Portraits"
+    r_outer = size * 0.33
+    gap = size * 0.06
+    rest_w = width_of(SERIF, rest, size, -0.005)
+    x0 = (W - (2 * r_outer + gap + rest_w)) / 2
+    base = 150
+    cx = x0 + r_outer
+    cy = base - size * 0.34
+    ring = (f'<circle cx="{cx:.1f}" cy="{cy:.1f}" r="{r_outer:.1f}" fill="none" stroke="{ink}" stroke-width="{size*0.05:.1f}"/>'
+            f'<circle cx="{cx:.1f}" cy="{cy:.1f}" r="{size*0.04:.1f}" fill="{accent}"/>')
+    d, _ = text_path(SERIF, rest, size, -0.005, x0 + 2 * r_outer + gap, base)
+    tag, _ = centered(SANS, "CYPRESS · ORANGE COUNTY", 15, 0.5, W / 2 + 4, 206, ink)
+    return svg(W, H, ring + f'<path d="{d}" fill="{ink}"/>' + tag, bg)
+
+
+# ---------------------------------------------------------------- concept 9
+def tiered(ink=FOREST, accent=ROSE, bg=None):
+    """Three-tier label with hairlines — hotel / atelier feel."""
+    W, H = 760, 360
+    cx = W / 2
+    name, nw = centered(SERIF, "ORANGE COUNTY", 56, 0.22, cx, 128, ink)
+    half = nw / 2 + 10
+    l1 = f'<rect x="{cx-half:.1f}" y="166" width="{half*2:.1f}" height="1" fill="{ink}" opacity="0.55"/>'
+    sub, _ = centered(SERIF, "PORTRAITS", 30, 0.42, cx + 0.21 * 30, 214, ink)
+    l2 = f'<rect x="{cx-half:.1f}" y="242" width="{half*2:.1f}" height="1" fill="{ink}" opacity="0.55"/>'
+    city, _ = centered(SANS, "CYPRESS  ·  CALIFORNIA", 12, 0.42, cx + 0.21 * 12, 282, ink)
+    dot = f'<circle cx="{cx}" cy="{166.5}" r="3.2" fill="{bg or WHITE}" stroke="{accent}" stroke-width="1.2"/>'
+    return svg(W, H, name + l1 + dot + sub + l2 + city, bg)
+
+
 def main():
     os.makedirs(OUT, exist_ok=True)
     files = {
@@ -152,6 +260,18 @@ def main():
         "2-lockup-white.svg": lockup(WHITE, ROSE),
         "3-editorial.svg": editorial(),
         "3-editorial-white.svg": editorial(WHITE, ROSE),
+        "4-inverted.svg": inverted(),
+        "4-inverted-white.svg": inverted(WHITE, ROSE),
+        "5-framed.svg": framed(),
+        "5-framed-white.svg": framed(WHITE, ROSE),
+        "6-ocp-monogram.svg": ocp_monogram(),
+        "6-ocp-monogram-white.svg": ocp_monogram(WHITE, ROSE),
+        "7-single-line.svg": single_line(),
+        "7-single-line-white.svg": single_line(WHITE, ROSE),
+        "8-lens.svg": lens(),
+        "8-lens-white.svg": lens(WHITE, ROSE),
+        "9-tiered.svg": tiered(),
+        "9-tiered-white.svg": tiered(WHITE, ROSE, FOREST),
     }
     for name, content in files.items():
         with open(os.path.join(OUT, name), "w") as f:
