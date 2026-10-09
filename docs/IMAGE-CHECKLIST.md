@@ -16,17 +16,17 @@ Generated from `oc-portraits/inc/image-slots.php` by `tools/build-placeholders.p
 | H6 | Home | Studio & outdoor section — outdoor image | Landscape (3/2) | 1800 × 1200 px | An outdoor portrait in natural light. | ☐ |
 | H7 | Home | Meet Zharmaine section | Portrait (4/5) | 1200 × 1500 px | A real photograph of Zharmaine (headshot or at work). Same file as A1 is fine. | ☐ |
 | F1 | Families | Hero, right of the heading | Landscape (4/3) | 2000 × 1500 px | Family portrait with everyone connected; leave space around heads for the crop. | ☐ |
-| F2 | Families | Photo row, left | Portrait (4/5) | 1200 × 1500 px | Studio family portrait. | ☐ |
-| F3 | Families | Photo row, centre | Portrait (4/5) | 1200 × 1500 px | Outdoor family portrait. | ☐ |
-| F4 | Families | Photo row, right | Portrait (4/5) | 1200 × 1500 px | Candid in-between moment (siblings, parent and child). | ☐ |
+| F2 | Families | Photo row, left | Landscape (3/2) | 1800 × 1200 px | Studio family portrait. | ☐ |
+| F3 | Families | Photo row, centre | Landscape (3/2) | 1800 × 1200 px | Outdoor family portrait. | ☐ |
+| F4 | Families | Photo row, right | Landscape (3/2) | 1800 × 1200 px | Candid in-between moment (siblings, parent and child). | ☐ |
 | C1 | Children | Hero, right of the heading | Landscape (4/3) | 2000 × 1500 px | A child mid-expression — laughing, thinking, playing. | ☐ |
 | C2 | Children | Photo row, left | Landscape (3/2) | 1800 × 1200 px | Close portrait with personality. | ☐ |
 | C3 | Children | Photo row, centre | Landscape (3/2) | 1800 × 1200 px | Birthday or milestone portrait. | ☐ |
 | C4 | Children | Photo row, right | Landscape (3/2) | 1800 × 1200 px | Outdoor or movement shot. | ☐ |
 | M1 | Motherhood & Maternity | Hero, right of the heading | Landscape (4/3) | 2000 × 1500 px | Mother and child together. | ☐ |
 | M2 | Motherhood & Maternity | Maternity section | Portrait (4/5) | 1200 × 1500 px | Maternity portrait (studio or outdoor). | ☐ |
-| M3 | Motherhood & Maternity | Photo row, left | Portrait (4/5) | 1200 × 1500 px | Studio motherhood portrait. | ☐ |
-| M4 | Motherhood & Maternity | Photo row, right | Portrait (4/5) | 1200 × 1500 px | Outdoor motherhood portrait. | ☐ |
+| M3 | Motherhood & Maternity | Photo row, left | Landscape (3/2) | 1800 × 1200 px | Studio motherhood portrait. | ☐ |
+| M4 | Motherhood & Maternity | Photo row, right | Landscape (3/2) | 1800 × 1200 px | Outdoor motherhood portrait. | ☐ |
 | P1 | Experience & Pricing | Hero, right of the heading | Landscape (4/3) | 2000 × 1500 px | A relaxed session moment. Reuse of a Families image is fine. | ☐ |
 | P2 | Experience & Pricing | Collection card: Childhood Portraits | Landscape (3/2) | 1200 × 800 px | Child portrait (reuse C2–C4). | ☐ |
 | P3 | Experience & Pricing | Collection card: Signature Family | Landscape (3/2) | 1200 × 800 px | Family portrait (reuse F2–F4). | ☐ |
