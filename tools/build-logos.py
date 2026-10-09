@@ -248,6 +248,32 @@ def tiered(ink=FOREST, accent=ROSE, bg=None):
     return svg(W, H, name + l1 + dot + sub + l2 + city, bg)
 
 
+# ---------------------------------------------------------------- concept 9 family
+def tiered_compact(ink=FOREST, accent=ROSE, bg=None):
+    """Header version of the tiered label: name / hairline+dot / PORTRAITS."""
+    W, H = 760, 250
+    cx = W / 2
+    name, nw = centered(SERIF, "ORANGE COUNTY", 56, 0.22, cx, 112, ink)
+    half = nw / 2 + 10
+    l1 = f'<rect x="{cx-half:.1f}" y="150" width="{half*2:.1f}" height="1" fill="{ink}" opacity="0.55"/>'
+    dot = f'<circle cx="{cx}" cy="150.5" r="3.2" fill="{bg or WHITE}" stroke="{accent}" stroke-width="1.2"/>'
+    sub, _ = centered(SERIF, "PORTRAITS", 30, 0.42, cx + 0.21 * 30, 200, ink)
+    return svg(W, H, name + l1 + dot + sub, bg)
+
+
+def tiered_mark(ink=FOREST, accent=ROSE, bg=None, size=512):
+    """Small square mark: OC between two hairlines, rose dot on the top line."""
+    cx = cy = size / 2
+    oc, w = centered(SERIF, "OC", size * 0.42, 0.04, cx + 0.02 * size * 0.42, cy + size * 0.145, ink)
+    half = w / 2 + size * 0.06
+    y1, y2 = cy - size * 0.235, cy + size * 0.235
+    sw = max(1.5, size * 0.004)
+    l1 = f'<rect x="{cx-half:.1f}" y="{y1:.1f}" width="{half*2:.1f}" height="{sw:.1f}" fill="{ink}" opacity="0.6"/>'
+    l2 = f'<rect x="{cx-half:.1f}" y="{y2:.1f}" width="{half*2:.1f}" height="{sw:.1f}" fill="{ink}" opacity="0.6"/>'
+    dot = f'<circle cx="{cx}" cy="{y1+sw/2:.1f}" r="{size*0.014:.1f}" fill="{bg or WHITE}" stroke="{accent}" stroke-width="{size*0.005:.1f}"/>'
+    return svg(size, size, l1 + dot + oc + l2, bg)
+
+
 def main():
     os.makedirs(OUT, exist_ok=True)
     files = {
@@ -272,6 +298,11 @@ def main():
         "8-lens-white.svg": lens(WHITE, ROSE),
         "9-tiered.svg": tiered(),
         "9-tiered-white.svg": tiered(WHITE, ROSE, FOREST),
+        "9-tiered-compact.svg": tiered_compact(),
+        "9-tiered-compact-white.svg": tiered_compact(WHITE, ROSE, FOREST),
+        "9-tiered-mark.svg": tiered_mark(),
+        "9-tiered-mark-white.svg": tiered_mark(WHITE, ROSE, FOREST),
+        "9-tiered-mark-site-icon.svg": tiered_mark(FOREST, ROSE, PALE),
     }
     for name, content in files.items():
         with open(os.path.join(OUT, name), "w") as f:
