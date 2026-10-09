@@ -6,7 +6,7 @@ Description: A lightweight block theme for Orange County Portraits — family, c
 Requires at least: 6.6
 Tested up to: 7.1
 Requires PHP: 7.4
-Version: 1.0.0
+Version: 1.1.0
 License: GNU General Public License v2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: oc-portraits
@@ -57,11 +57,11 @@ Tags: block-patterns, full-site-editing, one-column, wide-blocks, accessibility-
 
 /* ---------- Eyebrows, rules, small text ---------- */
 .ocp-eyebrow {
-	font-size: var(--wp--preset--font-size--x-small);
+	font-size: 0.75rem;
 	letter-spacing: var(--wp--custom--eyebrow-tracking);
 	text-transform: uppercase;
 	font-weight: 500;
-	line-height: 1.5;
+	line-height: 1.6;
 }
 .ocp-eyebrow:not([class*="-color"]) {
 	color: var(--wp--preset--color--moss);
@@ -72,9 +72,9 @@ Tags: block-patterns, full-site-editing, one-column, wide-blocks, accessibility-
 }
 hr.ocp-rule,
 hr.is-style-ocp-short {
-	width: 3.5rem;
-	max-width: 3.5rem;
-	height: 2px;
+	width: 2.5rem;
+	max-width: 2.5rem;
+	height: 1px;
 	border: 0;
 	background-color: var(--wp--preset--color--rose);
 	opacity: 1;
@@ -168,11 +168,11 @@ a.ocp-arrow-link:hover {
 }
 .ocp-chip {
 	margin: 0 !important;
-	padding: 0.6rem 1.1rem;
-	background: var(--wp--preset--color--white);
-	border: 1px solid #D5DED2;
-	font-size: var(--wp--preset--font-size--x-small);
-	letter-spacing: 0.16em;
+	padding: 0.55rem 1.1rem;
+	background: transparent;
+	border: 1px solid #C9D3C6;
+	font-size: 0.6875rem;
+	letter-spacing: 0.2em;
 	text-transform: uppercase;
 	font-weight: 500;
 }
@@ -183,6 +183,7 @@ a.ocp-arrow-link:hover {
 .ocp-step-number {
 	font-family: var(--wp--preset--font-family--serif);
 	font-size: var(--wp--preset--font-size--xx-large);
+	font-weight: 200;
 	line-height: 1;
 	margin-bottom: 0.5rem;
 }
@@ -201,6 +202,7 @@ a.ocp-arrow-link:hover {
 }
 .ocp-price {
 	font-family: var(--wp--preset--font-family--serif);
+	font-weight: 300;
 	font-size: var(--wp--preset--font-size--x-large);
 	line-height: 1.1;
 }
@@ -235,6 +237,7 @@ a.ocp-arrow-link:hover {
 /* ---------- Details (FAQ) ---------- */
 .wp-block-details summary {
 	font-family: var(--wp--preset--font-family--serif);
+	font-weight: 300;
 	font-size: var(--wp--preset--font-size--large);
 	cursor: pointer;
 	padding-block: 0.25rem;
@@ -413,4 +416,110 @@ a.ocp-arrow-link:hover {
 .ocp-site-header .wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__container {
 	align-items: flex-start !important;
 	gap: 1.25rem;
+}
+
+/* ---------- Luxury refinements (v1.1) ---------- */
+
+/* Quieter body copy, finer arrows and links */
+.wp-block-post-content p,
+.ocp-card p {
+	font-weight: 350;
+}
+.ocp-arrow-link a,
+a.ocp-arrow-link {
+	font-size: 0.75rem;
+	font-weight: 500;
+	letter-spacing: 0.2em;
+	text-transform: uppercase;
+	padding-bottom: 4px;
+}
+.wp-block-button.is-style-arrow .wp-block-button__link::after,
+.wp-block-button.is-style-outline-arrow .wp-block-button__link::after {
+	font-weight: 300;
+}
+strong {
+	font-weight: 600;
+}
+
+/* Images: a slow, subtle settle on hover (pointer devices only) */
+@media (hover: hover) {
+	.ocp-card .wp-block-image,
+	.ocp-photo-row .wp-block-image,
+	.wp-block-post-featured-image {
+		overflow: hidden;
+	}
+	.ocp-card .wp-block-image img,
+	.ocp-photo-row .wp-block-image img,
+	.wp-block-post-featured-image img {
+		transition: transform 1.2s cubic-bezier(0.2, 0.6, 0.2, 1);
+	}
+	.ocp-card:hover .wp-block-image img,
+	.ocp-photo-row .wp-block-image:hover img,
+	.wp-block-post:hover .wp-block-post-featured-image img {
+		transform: scale(1.025);
+	}
+}
+
+/* Header: a little more air, hairline border */
+.ocp-site-header {
+	border-bottom-color: #E7ECE5 !important;
+}
+
+/* Phones */
+@media (max-width: 781px) {
+	/* Lead with the photograph in split heroes */
+	.ocp-hero .ocp-hero-split > .wp-block-column:last-child {
+		order: -1;
+	}
+	/* Photo rows become an editorial grid: one wide image, then pairs */
+	.ocp-photo-row .wp-block-columns {
+		display: grid !important;
+		grid-template-columns: 1fr 1fr;
+		gap: 0.75rem !important;
+	}
+	.ocp-photo-row .wp-block-columns > .wp-block-column {
+		margin: 0 !important;
+	}
+	.ocp-photo-row .wp-block-columns > .wp-block-column:first-child:nth-last-child(odd) {
+		grid-column: 1 / -1;
+	}
+	.ocp-photo-row .wp-block-columns > .wp-block-column:first-child:nth-last-child(odd) img {
+		aspect-ratio: 4 / 3 !important;
+	}
+	/* Footer: centred and quiet */
+	.ocp-footer-brand,
+	.ocp-footer-brand p {
+		align-items: center;
+		text-align: center;
+	}
+	footer.wp-block-template-part .alignwide.is-layout-flex {
+		flex-direction: column;
+		align-items: center !important;
+		justify-content: center !important;
+		text-align: center;
+	}
+	.ocp-dot-nav .wp-block-navigation__container {
+		align-items: center !important;
+		width: 100%;
+	}
+	.ocp-dot-nav {
+		width: 100%;
+	}
+}
+
+/* Footer links: small, tracked capitals */
+.ocp-dot-nav {
+	font-size: 0.6875rem !important;
+	letter-spacing: 0.2em;
+	text-transform: uppercase;
+}
+
+/* Jetpack sharing / likes / related posts are not part of this design */
+.sharedaddy,
+.sd-sharing-enabled,
+.sd-like,
+.jetpack-likes-widget-wrapper,
+#jp-post-flair,
+.jp-relatedposts {
+	display: none !important;
 }

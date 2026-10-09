@@ -13,7 +13,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'OCP_VERSION', '1.0.0' );
+define( 'OCP_VERSION', '1.1.0' );
 
 require_once __DIR__ . '/inc/blocks.php';
 
@@ -227,3 +227,14 @@ function ocp_eager_image_count() {
 	return 1;
 }
 add_filter( 'wp_omit_loading_attr_threshold', 'ocp_eager_image_count' );
+
+/**
+ * Jetpack sharing buttons, likes and related posts don't belong in this
+ * design (the article template has its own related posts).
+ */
+add_filter( 'sharing_show', '__return_false', 99 );
+add_filter( 'wpl_is_likes_visible', '__return_false', 99 );
+add_filter( 'jetpack_relatedposts_filter_options', function ( $options ) {
+	$options['enabled'] = false;
+	return $options;
+} );
