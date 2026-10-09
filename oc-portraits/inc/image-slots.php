@@ -30,9 +30,9 @@ return array(
 
 	// Children.
 	'children-hero'       => array( 'id' => 'C1', 'page' => 'Children', 'place' => 'Hero, right of the heading', 'ratio' => '4/3', 'size' => '2000 × 1500', 'subject' => 'A child mid-expression — laughing, thinking, playing.' ),
-	'children-1'          => array( 'id' => 'C2', 'page' => 'Children', 'place' => 'Photo row, left', 'ratio' => '4/5', 'size' => '1200 × 1500', 'subject' => 'Close portrait with personality.' ),
-	'children-2'          => array( 'id' => 'C3', 'page' => 'Children', 'place' => 'Photo row, centre', 'ratio' => '4/5', 'size' => '1200 × 1500', 'subject' => 'Birthday or milestone portrait.' ),
-	'children-3'          => array( 'id' => 'C4', 'page' => 'Children', 'place' => 'Photo row, right', 'ratio' => '4/5', 'size' => '1200 × 1500', 'subject' => 'Outdoor or movement shot.' ),
+	'children-1'          => array( 'id' => 'C2', 'page' => 'Children', 'place' => 'Photo row, left', 'ratio' => '3/2', 'size' => '1800 × 1200', 'subject' => 'Close portrait with personality.' ),
+	'children-2'          => array( 'id' => 'C3', 'page' => 'Children', 'place' => 'Photo row, centre', 'ratio' => '3/2', 'size' => '1800 × 1200', 'subject' => 'Birthday or milestone portrait.' ),
+	'children-3'          => array( 'id' => 'C4', 'page' => 'Children', 'place' => 'Photo row, right', 'ratio' => '3/2', 'size' => '1800 × 1200', 'subject' => 'Outdoor or movement shot.' ),
 
 	// Motherhood & Maternity.
 	'motherhood-hero'     => array( 'id' => 'M1', 'page' => 'Motherhood & Maternity', 'place' => 'Hero, right of the heading', 'ratio' => '4/3', 'size' => '2000 × 1500', 'subject' => 'Mother and child together.' ),

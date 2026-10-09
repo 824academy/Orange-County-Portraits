@@ -20,9 +20,9 @@ Generated from `oc-portraits/inc/image-slots.php` by `tools/build-placeholders.p
 | F3 | Families | Photo row, centre | Portrait (4/5) | 1200 × 1500 px | Outdoor family portrait. | ☐ |
 | F4 | Families | Photo row, right | Portrait (4/5) | 1200 × 1500 px | Candid in-between moment (siblings, parent and child). | ☐ |
 | C1 | Children | Hero, right of the heading | Landscape (4/3) | 2000 × 1500 px | A child mid-expression — laughing, thinking, playing. | ☐ |
-| C2 | Children | Photo row, left | Portrait (4/5) | 1200 × 1500 px | Close portrait with personality. | ☐ |
-| C3 | Children | Photo row, centre | Portrait (4/5) | 1200 × 1500 px | Birthday or milestone portrait. | ☐ |
-| C4 | Children | Photo row, right | Portrait (4/5) | 1200 × 1500 px | Outdoor or movement shot. | ☐ |
+| C2 | Children | Photo row, left | Landscape (3/2) | 1800 × 1200 px | Close portrait with personality. | ☐ |
+| C3 | Children | Photo row, centre | Landscape (3/2) | 1800 × 1200 px | Birthday or milestone portrait. | ☐ |
+| C4 | Children | Photo row, right | Landscape (3/2) | 1800 × 1200 px | Outdoor or movement shot. | ☐ |
 | M1 | Motherhood & Maternity | Hero, right of the heading | Landscape (4/3) | 2000 × 1500 px | Mother and child together. | ☐ |
 | M2 | Motherhood & Maternity | Maternity section | Portrait (4/5) | 1200 × 1500 px | Maternity portrait (studio or outdoor). | ☐ |
 | M3 | Motherhood & Maternity | Photo row, left | Portrait (4/5) | 1200 × 1500 px | Studio motherhood portrait. | ☐ |
