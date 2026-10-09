@@ -1,4 +1,16 @@
-# Logo concepts
+# Logo
+
+**Chosen direction: 9 · Tiered atelier label.** Three sizes, all in `brand/`:
+
+| Use | File |
+|---|---|
+| Print, footer, gallery covers, anything with room | `9-tiered.svg` / `-white.svg` (`png/9-tiered*.png`) |
+| Website header (set as Site Logo) | `9-tiered-compact.svg` (`png/orange-county-portraits-logo.png`) |
+| Site icon, Instagram profile, watermark | `9-tiered-mark.svg` / `-site-icon.svg` (`png/orange-county-portraits-icon.png`) |
+
+`logo-tiered-family.png` shows the three together. The other concepts below are kept for reference.
+
+## All concepts
 
 Three restrained directions for Orange County Portraits, built only from the website's own fonts:
 - **Newsreader Light**: the serif used for headings.
