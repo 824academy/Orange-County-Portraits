@@ -6,7 +6,7 @@ Description: A lightweight block theme for Orange County Portraits — family, c
 Requires at least: 6.6
 Tested up to: 7.1
 Requires PHP: 7.4
-Version: 1.1.0
+Version: 1.2.0
 License: GNU General Public License v2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: oc-portraits
@@ -522,4 +522,22 @@ strong {
 #jp-post-flair,
 .jp-relatedposts {
 	display: none !important;
+}
+
+/* ---------- Logo (v1.2) ----------
+   When a Site Logo is set (Settings → General), it replaces the text wordmark. */
+.ocp-brand:has(.wp-block-site-logo) .wp-block-site-title {
+	display: none;
+}
+.ocp-brand .wp-block-site-logo {
+	margin: 0;
+}
+.ocp-brand .wp-block-site-logo img {
+	display: block;
+	height: auto;
+}
+@media (max-width: 781px) {
+	.ocp-site-header .ocp-brand .wp-block-site-logo img {
+		width: 176px !important;
+	}
 }

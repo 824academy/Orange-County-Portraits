@@ -13,7 +13,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'OCP_VERSION', '1.1.0' );
+define( 'OCP_VERSION', '1.2.0' );
 
 require_once __DIR__ . '/inc/blocks.php';
 
