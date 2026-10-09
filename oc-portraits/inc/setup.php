@@ -228,7 +228,10 @@ function ocp_setup_cf7() {
 	$page = get_page_by_path( 'contact' );
 	$note = '';
 	if ( $page && false !== strpos( $page->post_content, 'ocp-form-slot' ) ) {
-		$shortcode = '<!-- wp:shortcode -->' . "\n" . $form->shortcode() . "\n" . '<!-- /wp:shortcode -->';
+		// Reload so the saved hash is available; fall back to the numeric ID.
+		$saved     = wpcf7_contact_form( $form->id() );
+		$tag       = ( $saved && $saved->hash() ) ? $saved->shortcode() : sprintf( '[contact-form-7 id="%d" title="Session inquiry"]', $form->id() );
+		$shortcode = '<!-- wp:shortcode -->' . "\n" . $tag . "\n" . '<!-- /wp:shortcode -->';
 		$content   = preg_replace( '#<!-- wp:paragraph \{"className":"ocp-form-slot"\} -->.*?<!-- /wp:paragraph -->#s', $shortcode, $page->post_content, 1 );
 		wp_update_post(
 			array(
