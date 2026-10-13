@@ -261,17 +261,23 @@ def tiered_compact(ink=FOREST, accent=ROSE, bg=None):
     return svg(W, H, name + l1 + dot + sub, bg)
 
 
-def tiered_mark(ink=FOREST, accent=ROSE, bg=None, size=512):
-    """Small square mark: OC between two hairlines, rose dot on the top line."""
-    cx = cy = size / 2
-    oc, w = centered(SERIF, "OC", size * 0.42, 0.04, cx + 0.02 * size * 0.42, cy + size * 0.145, ink)
+def tiered_mark(ink=FOREST, accent=ROSE, bg=None, size=512, portraits=True):
+    """Small square mark: OC between two hairlines, rose dot on the top line,
+    and PORTRAITS beneath (omit it for tiny favicon sizes)."""
+    cx = size / 2
+    cy = size / 2 - (size * 0.06 if portraits else 0)
+    oc, w = centered(SERIF, "OC", size * 0.40, 0.04, cx + 0.02 * size * 0.40, cy + size * 0.138, ink)
     half = w / 2 + size * 0.06
-    y1, y2 = cy - size * 0.235, cy + size * 0.235
+    y1, y2 = cy - size * 0.225, cy + size * 0.225
     sw = max(1.5, size * 0.004)
     l1 = f'<rect x="{cx-half:.1f}" y="{y1:.1f}" width="{half*2:.1f}" height="{sw:.1f}" fill="{ink}" opacity="0.6"/>'
     l2 = f'<rect x="{cx-half:.1f}" y="{y2:.1f}" width="{half*2:.1f}" height="{sw:.1f}" fill="{ink}" opacity="0.6"/>'
     dot = f'<circle cx="{cx}" cy="{y1+sw/2:.1f}" r="{size*0.014:.1f}" fill="{bg or WHITE}" stroke="{accent}" stroke-width="{size*0.005:.1f}"/>'
-    return svg(size, size, l1 + dot + oc + l2, bg)
+    word = ""
+    if portraits:
+        fs = size * 0.058
+        word, _ = centered(SERIF, "PORTRAITS", fs, 0.42, cx + 0.21 * fs, y2 + size * 0.105, ink)
+    return svg(size, size, l1 + dot + oc + l2 + word, bg)
 
 
 def main():
@@ -303,6 +309,8 @@ def main():
         "9-tiered-mark.svg": tiered_mark(),
         "9-tiered-mark-white.svg": tiered_mark(WHITE, ROSE, FOREST),
         "9-tiered-mark-site-icon.svg": tiered_mark(FOREST, ROSE, PALE),
+        "9-tiered-mark-forest.svg": tiered_mark(WHITE, ROSE, FOREST),
+        "9-tiered-mark-favicon.svg": tiered_mark(FOREST, ROSE, PALE, portraits=False),
     }
     for name, content in files.items():
         with open(os.path.join(OUT, name), "w") as f:
